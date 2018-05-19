@@ -1,103 +1,57 @@
-<ion-header>
-</ion-header>
-
-<ion-content style="background-color: #eaf4fc;" padding-horizontal>
-    <ion-grid class="main">
+<ion-content class="main-container">
+    <ion-grid padding>
         <ion-row>
-            <ion-col offset-md-2 col-md-8 col-12 style="background-color: white; padding: 1.2em;">
+            <ion-col offset-md-2 col-md-8 col-12 class="main">
                 <div class="top">
-                    <img src="../../assets/imgs/techd_logo_horizonal2018_white.svg">
+                    <img src="../../assets/imgs/techd-logo.svg">
                 </div>
-                <div>
-                    <b>
-                        <p>
-                            Techd creates web applications for making people happy.
-                            I think that humans should do what humans are good at and
-                            computers should do what computers are good at.
-                        </p>
-                        <p>
-                            Happy engineering!
-                        </p>
-                    </b>
+                <div class="message content-box">
+                    <p>{{message}}</p>
                 </div>
+
                 <h1>Portfolio</h1>
-
-                <ion-row>
-                    <ion-col col-md-4 col-sm-6 col-12>
-                        <ion-card>
-                            <img src="../../assets/imgs/DXdLEYYVwAAsvEA.jpg">
-                            <ion-item style="display: flex; align-items: center;">
-                                <h2>seede</h2>
-                                <p>Simple Task Manager</p>
-                            </ion-item>
-
-                        </ion-card>
-                    </ion-col>
-                </ion-row>
+                <div class="content-box">
+                    <ion-row>
+                        <ion-col col-xl-4 col-sm-6 col-12>
+                            <div (click)="seede()">
+                                <ion-card>
+                                    <img src="../../assets/imgs/portfolio-seede.jpg">
+                                    <ion-item style="display: flex; align-items: center;">
+                                        <h2>seede</h2>
+                                        <p>Simple Task Manager</p>
+                                    </ion-item>
+                                </ion-card>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </div>
                 <h1>Technologies</h1>
-                These days, I often use the following technologies.
-                <ion-row>
-                    <ion-col offset-1 col-10>
-
-                        <div class="table">
-                            <ion-row>
-                                <ion-col col-4><b>Kinds</b></ion-col>
-                                <ion-col>Web Application(SPA, PWA)</ion-col>
-                            </ion-row>
-                            <ion-row>
-                                <ion-col col-4><b>Platforms</b></ion-col>
-                                <ion-col>AWS(EC2, ECS, Lambda, RDS, Redshift), GCP( Kubernetes Engine, Cloud SQL)</ion-col>
-                            </ion-row>
-                            <ion-row>
-                                <ion-col col-4><b>Programming Languages (Backend)</b></ion-col>
-                                <ion-col>Kotlin(Spring Boot), Go</ion-col>
-                            </ion-row>
-                            <ion-row>
-                                <ion-col col-4><b>Programming Languages (Frontend)</b></ion-col>
-                                <ion-col>Angular(Ionic)</ion-col>
-                            </ion-row>
-                            <ion-row>
-                                <ion-col col-4><b>Methods</b></ion-col>
-                                <ion-col>MicroService, gRPC, TDD, DDD</ion-col>
-                            </ion-row>
-                            <ion-row>
-                                <ion-col col-4><b>Tools</b></ion-col>
-                                <ion-col>CircleCI, Terraform, Github, Gitlab, Docker, Kubernetes</ion-col>
-                            </ion-row>
-                        </div>
-                    </ion-col>
-                </ion-row>
+                <div class="content-box">
+                    I often use the following technologies.
+                </div>
+                <div class="content-box">
+                    <div class="table">
+                        <ion-row *ngFor="let t of technologies">
+                            <ion-col col-4 class="first-col">{{t.name}}</ion-col>
+                            <ion-col>{{t.description}}</ion-col>
+                        </ion-row>
+                    </div>
+                </div>
                 <h1>About</h1>
-                <ion-row>
-                    <ion-col offset-1 col-10>
-
-                        <div class="table">
-                            <ion-row>
-                                <ion-col col-4><b>Trade Name</b></ion-col>
-                                <ion-col>techd</ion-col>
-                            </ion-row>
-                            <ion-row>
-                                <ion-col col-4><b>Established</b></ion-col>
-                                <ion-col>Jun 11, 2017</ion-col>
-                            </ion-row>
-                            <ion-row>
-                                <ion-col col-4><b>Business</b></ion-col>
-                                <ion-col>Web Application Engineering</ion-col>
-                            </ion-row>
-                            <ion-row>
-                                <ion-col col-4><b>President</b></ion-col>
-                                <ion-col>Takahiro Suzuki</ion-col>
-                            </ion-row>
-                            <ion-row>
-                                <ion-col col-4><b>Place</b></ion-col>
-                                <ion-col>Akabane Kita-ku Tokyo, Japan</ion-col>
-                            </ion-row>
-                        </div>
-                    </ion-col>
-                </ion-row>
-                <agm-map [latitude]="lat" [longitude]="lng" [zoom]="15">
-                    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-                </agm-map>
+                <div class="content-box">
+                    <div class="table">
+                        <ion-row *ngFor="let p of profile">
+                            <ion-col col-4 class="first-col">{{p.name}}</ion-col>
+                            <ion-col>{{p.description}}</ion-col>
+                        </ion-row>
+                    </div>
+                </div>
+                <div class="content-box">
+                    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+                        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+                    </agm-map>
+                </div>
+                <div class="footer">© Copyright techd. All Rights Reserved.</div>
             </ion-col>
         </ion-row>
     </ion-grid>

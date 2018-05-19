@@ -1,9 +1,9 @@
 page-home {
-  .top{
-    z-index:0;
+  .top {
+    z-index: 0;
     overflow: hidden;
     content: '';
-    background: url('../../assets/imgs/gahag-0083674509.jpeg');
+    background: url('../../assets/imgs/tokyo-portlate.jpg');
     background-size: cover;
   }
 
@@ -12,18 +12,46 @@ page-home {
     border-left: solid 5px color($colors, primary)
   }
 
-  .main {
+  .main-container {
     color: color($colors, text);
+    background-color: color($colors, secondary);
+  }
+
+  .main {
+    background-color: color($colors, light);
+    padding: 1.2em;
+  }
+
+  .content-box {
+    padding: 1.5rem;
+  }
+
+  .message {
+    font-weight: bold;
+  }
+
+  .first-col {
+    font-weight: bold;
   }
 
   .table ion-row {
     padding-top: 5px;
     padding-bottom: 5px;
-    border-bottom:1px #eee solid;
+    border-bottom: 1px #eee solid;
+  }
+
+  .footer {
+    font-size: 0.8em;
+    color: #c5c5c5;
+    text-align: center;
   }
 
   agm-map {
     height: 300px;
+  }
+
+  p {
+    white-space: pre-wrap;
   }
 
 }
